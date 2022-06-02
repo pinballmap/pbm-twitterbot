@@ -10,9 +10,8 @@ require 'active_support/time'
 #no_update
 verbose
 
-timenow = Time.now.utc
-timepst = timenow + Time.zone_offset("PDT")
-timeago = timepst - 10.minutes
+timenow = Time.now
+timeago = timenow - 10.minutes
 
 url = 'https://pinballmap.com/location_machine_xrefs.rss'
 URI.open(url) do |rss|
